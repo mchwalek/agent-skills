@@ -16,12 +16,8 @@ Skills are just a folder containing a `SKILL.md`. Each harness scans its own ski
 
 ### Clone the repo
 
-```powershell
-git clone https://github.com/<you>/agent-skills.git
-```
-
 ```sh
-git clone https://github.com/<you>/agent-skills.git
+git clone https://github.com/mchwalek/agent-skills.git
 ```
 
 ### Claude Code
