@@ -12,15 +12,35 @@ Use when installing, running, or configuring IIS Express, or debugging its error
 
 ## Installation
 
+### Install with the `skills` CLI (recommended)
+
+[`npx skills`](https://github.com/vercel-labs/skills) supports Claude Code, opencode, Codex, Cursor, and 70+ other agents — it detects installed agents and symlinks skills into the right directory for you.
+
+```sh
+# Interactive: pick skills and agents
+npx skills add mchwalek/agent-skills
+
+# List available skills without installing
+npx skills add mchwalek/agent-skills --list
+
+# Install a specific skill to a specific agent
+npx skills add mchwalek/agent-skills --skill iis-express -a claude-code
+
+# Try a skill once without installing
+npx skills use mchwalek/agent-skills --skill iis-express | claude
+```
+
+### Manual install
+
 Skills are just a folder containing a `SKILL.md`. Each harness scans its own skill directory (or lets you register an extra path in config), so installing a skill from this repo means getting `skills/<name>/` into that location — via clone, copy, or symlink.
 
-### Clone the repo
+#### Clone the repo
 
 ```sh
 git clone https://github.com/mchwalek/agent-skills.git
 ```
 
-### Claude Code
+#### Claude Code
 
 Copy (or symlink) the skill folder into your personal skills directory:
 
@@ -32,7 +52,7 @@ Copy-Item -Recurse .\agent-skills\skills\iis-express $env:USERPROFILE\.claude\sk
 cp -r agent-skills/skills/iis-express ~/.claude/skills/iis-express
 ```
 
-### opencode
+#### opencode
 
 opencode scans `~/.config/opencode/skill/` (or `.opencode/skill/` per-project) for `**/SKILL.md`, and also auto-loads anything under `~/.claude/skills/` — so if you already installed for Claude Code above, opencode picks it up automatically. To install directly for opencode only:
 
@@ -54,7 +74,7 @@ Alternatively, point opencode at the cloned repo directly without copying, via `
 }
 ```
 
-### Codex
+#### Codex
 
 Codex has no native skill-directory scanner — it reads `AGENTS.md` instead. Reference the skill from your project's or global `AGENTS.md` so Codex knows to consult it:
 
@@ -64,6 +84,6 @@ Codex has no native skill-directory scanner — it reads `AGENTS.md` instead. Re
 - IIS Express: see `agent-skills/skills/iis-express/SKILL.md` for install, config, and troubleshooting.
 ```
 
-### Other harnesses
+#### Other harnesses
 
 Any tool that scans a directory of `SKILL.md` files (or that you can point at an explicit list of skill paths) works the same way: copy or symlink `skills/<name>/` into wherever that harness looks, or reference the file path from whatever instruction file it reads at startup (e.g. its own `AGENTS.md`/`CLAUDE.md`-style entry point).
