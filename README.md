@@ -18,6 +18,8 @@ Use when publishing markdown to a natively-formatted Google Doc (real heading st
 
 Use when the user approves an approach and wants it implemented end to end, particularly when they say you should not write the code yourself — e.g. "Let's go with Approach B", "proceed with the plan", "implement this and confirm with tests". The orchestrator holds the plan; subagents write the code; state lives on disk.
 
+**Requires** [obra/superpowers](https://github.com/obra/superpowers) to be installed — this skill orchestrates the `writing-plans`, `subagent-driven-development`, `dispatching-parallel-agents`, and `verification-before-completion` skills that ship with it.
+
 ## Installation
 
 ### Install with the `skills` CLI (recommended)

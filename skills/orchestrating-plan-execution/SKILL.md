@@ -5,6 +5,8 @@ description: "Use when the user approves an approach and wants it implemented en
 
 # Orchestrating Plan Execution
 
+**Requires [obra/superpowers](https://github.com/obra/superpowers) to be installed** — this skill orchestrates the `writing-plans`, `subagent-driven-development`, `dispatching-parallel-agents`, and `verification-before-completion` skills that ship with it.
+
 ## Overview
 
 You hold the plan. Subagents write the code. State lives on disk, not in
