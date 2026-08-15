@@ -14,6 +14,10 @@ Use when installing, running, or configuring IIS Express, or debugging its error
 
 Use when publishing markdown to a natively-formatted Google Doc (real heading styles, tables, bullets, inline diagrams) from Windows/PowerShell via the `gws` CLI, or when debugging a published doc that shows literal markdown asterisks, scrambled table cells, mojibake, an empty body, or an unreadable shrunken diagram — also when `gws --json` quoting breaks on Windows (`"| was unexpected at this time"`, `batchUpdate` oneof errors, Docs write-quota 429s).
 
+### `orchestrating-plan-execution`
+
+Use when the user approves an approach and wants it implemented end to end, particularly when they say you should not write the code yourself — e.g. "Let's go with Approach B", "proceed with the plan", "implement this and confirm with tests". The orchestrator holds the plan; subagents write the code; state lives on disk.
+
 ## Installation
 
 ### Install with the `skills` CLI (recommended)
