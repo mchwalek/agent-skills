@@ -10,6 +10,10 @@ Each skill lives in its own folder under `skills/` with a `SKILL.md` containing 
 
 Use when installing, running, or configuring IIS Express, or debugging its errors — e.g. `applicationhost.config` questions, custom domains/host headers, 503 responses with `Server: Microsoft-HTTPAPI/2.0`, 400 Invalid Hostname, `bindingInformation` syntax, `netsh urlacl`, `appcmd`, or Visual Studio/Rider regenerating/reverting IIS Express config.
 
+### `markdown-to-google-docs`
+
+Use when publishing markdown to a natively-formatted Google Doc (real heading styles, tables, bullets, inline diagrams) from Windows/PowerShell via the `gws` CLI, or when debugging a published doc that shows literal markdown asterisks, scrambled table cells, mojibake, an empty body, or an unreadable shrunken diagram — also when `gws --json` quoting breaks on Windows (`"| was unexpected at this time"`, `batchUpdate` oneof errors, Docs write-quota 429s).
+
 ## Installation
 
 ### Install with the `skills` CLI (recommended)
